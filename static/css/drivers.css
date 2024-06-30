@@ -1,0 +1,177 @@
+body, html  {
+    background-color: #e0e0e0;
+}
+
+.container {
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.517);
+    margin-top: 40px;
+    position: relative;
+}
+
+.titles {
+    font-family: "Anta", sans-serif;
+    font-weight: 500;
+    color: #fffdfd;
+    text-shadow: 2px 2px 0 rgb(0, 0, 0), -2px -2px 0 rgb(0, 0, 0), 2px -2px 0 rgb(0, 0, 0), -2px 2px 0 rgb(0, 0, 0); 
+}
+
+.driver-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 0.5px solid rgb(225, 6, 0);
+    margin-top: 40px;
+}
+.driver-card:last-child {
+    border-bottom: none;
+}
+.driver-image img, .team-logo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+.driver-info {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+.driver-info h2 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+.driver-info p {
+    margin: 5px 0;
+}
+.team-logo {
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+.driver-details, .driver-team {
+    display: flex;
+    flex-direction: column;
+}
+
+.driver-team{
+    margin-left: 10px;
+}
+
+select.form-select {
+    border-color: #ffffff;
+    font-family: "Anta", sans-serif;
+    font-size: large;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+#seasonSelect {
+    background-color: rgb(225, 6, 0); 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 20px; 
+    border-radius: 5px; 
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+}
+
+#seasonSelect .options {
+    background-color: #f9f9f9; 
+    color: #333; 
+    padding: 5px; 
+    font-size: 16px; 
+}
+
+.seasons {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 1.5%;
+    background-color: rgb(225, 6, 0);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.points{
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 75px;
+    color: rgb(87, 86, 86);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        margin: 40px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .driver-card {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .driver-image img, .team-logo img {
+        max-width: 150px;
+    }
+
+    .driver-info h2 {
+        font-size: 22px;
+    }
+
+    .driver-info p {
+        font-size: 16px;
+    }
+
+    .points {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        margin: 20px 0;
+    }
+
+    .driver-card {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .driver-image img, .team-logo img {
+        max-width: 120px;
+    }
+
+    .driver-info h2 {
+        font-size: 20px;
+    }
+
+    .driver-info p {
+        font-size: 14px;
+    }
+
+    .points {
+        font-size: 50px;
+    }
+
+    .seasons{
+        height: 0.7%;
+    }
+}

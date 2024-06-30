@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block title %}This is F1{% endblock %}
+
+{% block custom_styles %}
+    <link rel="icon" href="static/images/f1-logo2.png" sizes="16x16" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/home.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+
+    <div id="video-container">
+        <video loop autoplay muted>
+            <source src="static/images/F1-video.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <h1 class="titles">What is Formula 1?</h1>
+                <div class="teams">
+                    <p>Formula 1 (F1) is the highest class of international single-seater auto racing, sanctioned by the Fédération Internationale de l'Automobile (FIA). Established in 1950, it is known for its highly competitive and technologically advanced nature. The championship consists of a series of races, known as Grands Prix, held on various circuits around the world, including both public roads and specialized tracks.</p>
+                    <p>Formula 1 is not just a sport but a global spectacle, attracting millions of fans and significant media attention. It represents the pinnacle of motor racing, combining speed, strategy, and cutting-edge technology.</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h1 class="titles">Formula 1 Cars</h1>
+                <div class="teams">
+                    <p>F1 cars are the fastest regulated road-course racing cars in the world, due to their powerful engines, aerodynamic design, and advanced materials. Teams, often backed by major automobile manufacturers and sponsors, compete to develop the best-performing cars. Each team fields two drivers, who accumulate points based on their performance in each race, contributing to both individual (Drivers' Championship) and team (Constructors' Championship) standings.</p>
+                    <img class="track-image" src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/williams.png" alt="ferrari">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h1 class="titles">Teams</h1>
+                <div class="teams">
+                    <div class="image-container">
+                        <a href="https://www.formula1.com/en/teams/ferrari" target="_blank">
+                            <img class="track-image" src="https://media.formula1.com/content/dam/fom-website/teams/2024/ferrari-logo.png" alt="ferrari" width="100px">
+                            <span class="caption">Ferrari</span>
+                        </a>
+                    </div>
+                    <div class="image-container">
+                        <a href="https://www.formula1.com/en/teams/mclaren" target="_blank">
+                            <img class="track-image" src="https://media.formula1.com/content/dam/fom-website/teams/2024/mclaren-logo.png" alt="mclaren" title="Mclaren" width="100px">
+                            <span class="caption">Mclaren</span>
+                        </a>
+                    </div>
+                    <div class="image-container">
+                        <a href="https://www.formula1.com/en/teams/mercedes" target="_blank">
+                            <img class="track-image" src="https://media.formula1.com/content/dam/fom-website/teams/2024/mercedes-logo.png" alt="mercedes" title="Mercedes" width="100px">
+                            <span class="caption">Mercedes</span>
+                        </a>
+                    </div>
+                    <div class="image-container">
+                        <a href="https://www.formula1.com/en/teams/red-bull-racing" target="_blank">
+                            <img class="track-image" src="https://media.formula1.com/content/dam/fom-website/teams/2024/red-bull-racing-logo.png" alt="red bull" title="Red Bull" width="100px">
+                            <span class="caption">Red Bull</span>
+                        </a>
+                    </div>
+                    <div class="image-container">
+                        <a href="https://www.formula1.com/en/teams/williams" target="_blank">
+                            <img class="track-image" src="https://media.formula1.com/content/dam/fom-website/teams/2024/williams-logo.png" alt="williams" title="Williams" width="100px">
+                            <span class="caption">Williams</span>
+                        </a>
+                    </div>
+                    <div class="image-container">
+                        <a href="https://www.formula1.com/en/teams/aston-martin" target="_blank">
+                            <img class="track-image" src="https://media.formula1.com/content/dam/fom-website/teams/2024/aston-martin-logo.png" alt="aston-martin" title="Aston Martin" width="100px">
+                            <span class="caption">Aston Martin</span>
+                        </a>
+                    </div>
+                    <div class="image-container">
+                        <a href="https://www.formula1.com/en/teams/rb" target="_blank">
+                            <img class="track-image" src="https://media.formula1.com/content/dam/fom-website/teams/2024/rb-logo.png" alt="rb" title="RB" width="100px">
+                            <span class="caption">RB</span>
+                        </a>
+                    </div>
+                    <div class="image-container">
+                        <a href="https://www.formula1.com/en/teams/haas" target="_blank">
+                            <img class="track-image" src="https://media.formula1.com/content/dam/fom-website/teams/2024/haas-logo.png" alt="haas" title="Haas" width="100px">
+                            <span class="caption">Haas</span>
+                        </a>
+                    </div>
+                    <div class="image-container">
+                        <a href="https://www.formula1.com/en/teams/alpine" target="_blank">
+                            <img class="track-image" src="https://media.formula1.com/content/dam/fom-website/teams/2024/alpine-logo.png" alt="alpine" title="Alpine" width="100px">
+                            <span class="caption">Alpine</span>
+                        </a>
+                    </div>
+                    <div class="image-container">
+                        <a href="https://www.formula1.com/en/teams/kick-sauber" target="_blank">
+                            <img class="track-image" src="https://media.formula1.com/content/dam/fom-website/teams/2024/kick-sauber-logo.png" alt="kick-sauber" title="Kick Sauber" width="100px">
+                            <span class="caption">Kick Sauber</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h1 class="titles">Formula 1 Circuits</h1>
+                <div class="teams">
+                    <p>Formula 1 circuits, or tracks, are the venues where the high-speed, thrilling races of the Formula 1 World Championship take place. These circuits are located worldwide and vary greatly in their layout, length, and characteristics. Some tracks, like the historic Monaco Grand Prix, wind through city streets, providing a unique and challenging experience for drivers with tight corners and narrow roads. Others, like the modern Yas Marina Circuit in Abu Dhabi, are purpose-built facilities featuring a mix of long straights and sharp turns. Each circuit presents its own set of challenges, from high-speed corners that test a car's aerodynamic capabilities to complex sections that require precise driving skills. These tracks are integral to the sport, offering diverse and exciting backdrops for the world's fastest racing cars.</p>
+                    <a href="{{ url_for('circuits') }}">
+                        <button type="button" class="btn btn-outline-primary">View all F1 Circuits
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h1 class="titles">Formula 1 Ranking</h1>
+                <div class="teams">
+                    <p>In Formula 1, the drivers' rankings, or standings, are a critical measure of a driver's performance throughout the racing season. These rankings are determined based on the points drivers accumulate from their finishing positions in each race. Points are awarded to the top ten finishers, with the race winner receiving the most points and each subsequent position earning progressively fewer points. The rankings provide a snapshot of who the top-performing drivers are, reflecting their consistency, skill, and competitiveness. At the end of the season, the driver with the highest points total is crowned the World Champion. These rankings are closely followed by fans and teams alike, as they indicate not only individual success but also play a significant role in team strategies and sponsorships.</p>
+                    <a href="{{ url_for('drivers') }}">
+                        <button type="button" class="btn btn-outline-primary">View F1 rankings
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var swiper = new Swiper('.swiper', {
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 1,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                loop: false,
+                keyboard: true,
+                autoHeight: true,
+                on: {
+                    slideChangeTransitionEnd: function() {
+                    },
+                },
+            });
+        });  
+    </script>
+{% endblock %}

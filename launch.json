@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Flask",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/app.py",  // Altere para o caminho do seu arquivo Flask principal
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "jinja": true,
+            "justMyCode": false,
+            "env": {
+                "FLASK_APP": "app.py",  // Altere para o nome do seu arquivo Flask principal
+                "FLASK_ENV": "development"
+            }
+        }
+    ]
+}

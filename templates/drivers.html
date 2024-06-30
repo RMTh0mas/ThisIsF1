@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block title %}Drivers{% endblock %}
+
+{% block custom_styles %}
+    <link rel="icon" href="static/images/motorbike.png" sizes="16x16" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/drivers.css">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block nav %}
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #1a1a1a">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+        </span></a>
+        <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <a href="{{ url_for('index') }}">
+                <img src="static/images/f1-logo.png" alt="Trophy" width=auto height="30">
+            </a>
+            <ul class="navbar-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/drivers">Drivers Rankings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/circuits">Circuits</a></li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block main %}
+
+    <div class="seasons">
+        <h1 class="titles">Driver Standings</h1>
+        <form action="/drivers" method="post" id="seasonForm">
+            <select name="season" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="seasonSelect">
+                {% for season in seasons %}
+                    <option class="options" value="{{ season }}" {% if season == selected_season %}selected{% endif %}>{{ season }}</option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+    {% for driver in drivers %}
+        <div class="driver-card">
+            <div class="driver-image">
+                <img src="{{ driver.driver.image }}" alt="{{ driver.driver.name }}">
+            </div>
+            <div class="driver-team">
+                <h1>{{ driver.driver.number }}</h1>
+                <img src="{{ driver.team.logo }}" alt="{{ driver.team.name }}" class="team-logo">
+            </div>
+            <div class="driver-info">
+                <h2>{{ driver.position }}. {{ driver.driver.name }} ({{ driver.driver.abbr }})</h2>
+                <div class="driver-details">
+                    <p>Team: {{ driver.team.name }}</p>
+                    <p class="wins">Wins: {{ driver.wins }}</p>
+                </div>
+            </div>
+            <h1 class="points">{{ driver.points }} PTS</h1>
+        </div>
+    {% endfor %}
+
+    <script>
+        document.getElementById('seasonSelect').addEventListener('change', function() {
+            document.getElementById('seasonForm').submit();
+        });
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var seasonSelect = document.getElementById('seasonSelect');
+
+        // Verifica se há um valor armazenado no localStorage e define-o como selecionado
+        if (localStorage.getItem('selectedSeason')) {
+            seasonSelect.value = localStorage.getItem('selectedSeason');
+        }
+
+        // Atualiza o localStorage quando o valor do select mudar
+        seasonSelect.addEventListener('change', function() {
+            localStorage.setItem('selectedSeason', this.value);
+        });
+    });
+</script>
+{% endblock %}

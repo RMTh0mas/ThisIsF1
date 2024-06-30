@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block title %}Circuits{% endblock %}
+
+{% block custom_styles %}
+    <link rel="icon" href="static/images/circuit.png" sizes="16x16" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/circuits.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+{% endblock %}
+
+{% block nav %}
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #1a1a1a">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+        </span></a>
+        <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <a href="{{ url_for('index') }}">
+                <img src="static/images/f1-logo.png" alt="Trophy" width=auto height="30">
+            </a>
+            <ul class="navbar-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/drivers">Drivers Rankings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/circuits">Circuits</a></li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block main %}
+<main>
+    <h1 class="titles">Circuits 2024</h1>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            {% for circuit in circuits %}
+            <div class="swiper-slide" style="background-image: url('{{ circuit.circuit.background }}'); background-size: cover; background-position: center;">
+                    <h4 class="circuit-title">{{ circuit.circuit.name }}</h4>
+                    <img src="{{ circuit.circuit.image }}" alt="{{ circuit.circuit.name }}" class="circuit-image">
+                    <div class="circuit-details">
+                        <p class="circuit-info">{{ circuit.competition.location.city }}, {{ circuit.competition.location.country }}</p>
+                        <p class="circuit-info">
+                            {{ circuit.date }}
+                            {% if circuit.status == "Completed" %}
+                                <i class="bi bi-check-circle-fill"></i>
+                            {% else %}
+                                <i class="bi bi-clock-fill"></i>
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="circuit-menu">
+                        <p class="circuit-info">Status: {{ circuit.status }}</p>
+                        <p class="circuit-info">Circuit length: {{ circuit.circuit_lenght }} Km / {{ circuit.distance }}</p>
+                        <p class="circuit-info">Total Laps: {{ circuit.laps.total }}</p>
+                        <p class="circuit-info">Lap Record: {{ circuit.fastest_lap.time }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="navigation-and-pagination">
+            <div class="swiper-button-prev">
+                <i class="bi bi-chevron-left"></i>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next">
+                <i class="bi bi-chevron-right"></i>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var swiper = new Swiper('.swiper', {
+                autoplay: {
+                    delay: 5000,
+                },
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 1,
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                loop: true,
+                keyboard: true,
+                autoHeight: true,
+                on: {
+                    slideChangeTransitionEnd: function() {
+                        var currentSlide = swiper.realIndex;
+                        var backgroundImageUrl = circuits[currentSlide].image;
+                        document.body.style.backgroundImage = "url('" + backgroundImageUrl + "')";
+                    },
+                },
+            });
+        });
+    </script>
+{% endblock %}
