@@ -35,6 +35,6 @@ This project is a web application dedicated to showcasing Formula 1 information.
 ![Circuits Page](https://github.com/RMTh0mas/ThisIsF1/assets/72501636/ac6cc808-befb-4e32-babf-45cb7940b02e)
 
 ### Acknowledgments
-- **Swiper**: JavaScript library for creating carousels and slides.
-- **Bootstrap**: Frontend framework for responsive and mobile-first design.
-- **Rapid API**: Provides real-time data for Formula 1 races, drivers, and circuits.
+- **Swiper**: JavaScript library for creating carousels and slides. https://swiperjs.com/
+- **Bootstrap**: Frontend framework for responsive and mobile-first design. https://getbootstrap.com/docs/5.2/components/navbar/
+- **Rapid API**: Provides real-time data for Formula 1 races, drivers, and circuits. https://rapidapi.com/api-sports/api/api-formula-1
